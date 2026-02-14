@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escreva+ | Plataforma Completa para Escritores</title>
+  <style>
+    * { box-sizing: border-box; transition: background 0.3s, color 0.3s; }
+
+    body.light {
+      background: linear-gradient(180deg, #f7f9ff, #eef2ff);
+      color: #1f2937;
+    }
+
+    body.dark {
+      background: linear-gradient(180deg, #0f172a, #020617);
+      color: #e5e7eb;
+    }
+
+    header {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #6366f1, #22d3ee);
+      color: white;
+    }
+
+    body.dark header {
+      background: linear-gradient(135deg, #1e3a8a, #020617);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 16px;
+      background-color: white;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      z-index: 10;
+    }
+
+    body.dark nav {
+      background-color: #020617;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+
+    nav a {
+      color: #4338ca;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    body.dark nav a {
+      color: #93c5fd;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 { font-size: 2.3em; margin-bottom: 30px; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 22px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    body.dark .card {
+      background-color: #020617;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 220px;
+      border-radius: 16px;
+      padding: 18px;
+      font-size: 1em;
+      border: 2px solid #c7d2fe;
+      background-color: #f9fafb;
+      color: #111827;
+    }
+
+    body.dark textarea {
+      background-color: #020617;
+      color: #e5e7eb;
+      border-color: #1e3a8a;
+    }
+
+    button {
+      padding: 14px 28px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #6366f1, #22d3ee);
+      color: white;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 15px;
+      font-size: 0.9em;
+      color: #6b7280;
+    }
+
+    body.dark footer {
+      color: #9ca3af;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      border-radius: 30px;
+      background: #111827;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9em;
+      z-index: 100;
+    }
+
+    .focus-mode nav,
+    .focus-mode footer {
+      display: none;
+    }
+
+    .focus-mode section {
+      padding-top: 40px;
+    }
+
+    .reading-mode section {
+      max-width: 800px;
+    }
+
+    .font-controls {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 100;
+    }
+
+    .font-controls button {
+      padding: 10px 14px;
+      border-radius: 50%;
+      font-size: 0.9em;
+    }
+
+    body.serif {
+      font-family: 'Georgia', 'Times New Roman', serif;
+    }
+
+    body.sans {
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="light">
+
+<nav>
+  <a href="#auxilios">Ferramentas</a>
+  <a href="#editor">Editor</a>
+  <a href="#exemplos">Exemplos</a>
+  <a href="#niveis">Níveis</a>
+  <a href="#missoes">Missões</a>
+  <a href="#premium">Premium</a>
+  <a href="#login">Entrar</a>
+</nav>
+
+<header>
+  <h1>Escreva+</h1>
+  <p>Uma plataforma completa para estudantes, escritores iniciantes, autores independentes e criadores digitais.
+  Aprenda, pratique e publique sua escrita em um só lugar.</p>
+</header>
+
+<section id="auxilios">
+  <h2>Ferramentas para Todos os Níveis</h2>
+  <p style="max-width:800px; margin-bottom:40px;">Seja você estudante, iniciante ou autor experiente, o Escreva+ oferece apoio prático e criativo para cada etapa da escrita literária.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>Para Estudantes</h3>
+      <p>Ajuda em redações, contos escolares e exercícios de escrita criativa.</p>
+      <div class="example">Tema guiado, estrutura pronta e sugestões de desenvolvimento.</div>
+    </div>
+    <div class="card">
+      <h3>Para Iniciantes</h3>
+      <p>Destrave a criatividade e aprenda a estruturar histórias do zero.</p>
+      <div class="example">Ideias prontas, conflitos narrativos e finais possíveis.</div>
+    </div>
+    <div class="card">
+      <h3>Para Autores & Criadores</h3>
+      <p>Aprimore estilo, ritmo e profundidade emocional.</p>
+      <div class="example">Análise de texto, sugestões avançadas e reescrita.</div>
+    </div>
+  </div>
+</section>
+
+<section id="editor">
+  <h2>Editor Criativo Inteligente</h2>
+  <p style="max-width:800px; margin-bottom:40px;">Escreva diretamente na plataforma com apoio criativo em tempo real, adaptado ao seu nível de experiência.</p>
+  <div class="editor">
+    <textarea placeholder="Comece aqui: um conto, poema, capítulo ou exercício escolar..."></textarea>
+    <div class="editor-tools">
+      <button>Gerar Tema</button>
+      <button>Sugerir Continuação</button>
+      <button>Revisar Linguagem</button>
+      <button>Analisar Narrativa</button>
+    </div>
+  </div>
+</section>
+
+<section id="exemplos">
+  <h2>Exemplos e Modelos Literários</h2>
+  <p style="max-width:800px; margin-bottom:40px;">Conteúdos organizados por gênero e nível de experiência.</p>
+  <div class="cards">
+    <div class="card"><h3>Contos</h3><p>Textos curtos para estudo narrativo e escolar.</p></div>
+    <div class="card"><h3>Romances</h3><p>Capítulos-modelo e arcos longos.</p></div>
+    <div class="card"><h3>Poesia</h3><p>Imagens, ritmo e linguagem simbólica.</p></div>
+    <div class="card"><h3>Webnovels</h3><p>Estrutura seriada para criadores digitais.</p></div>
+  </div>
+</section>
+
+<section id="niveis">
+  <h2>Sistema de Níveis do Escritor</h2>
+  <div class="cards">
+    <div class="card"><h3>🌱 Iniciante</h3><p>Guias passo a passo, temas simples e correções básicas.</p></div>
+    <div class="card"><h3>🔥 Intermediário</h3><p>Desenvolvimento de estilo, conflitos e personagens.</p></div>
+    <div class="card"><h3>👑 Avançado</h3><p>Análise profunda, reescrita e técnicas literárias.</p></div>
+  </div>
+</section>
+
+<section id="missoes">
+  <h2>Missões Semanais de Escrita</h2>
+  <p style="max-width:800px; margin-bottom:40px;">Desafios criativos para praticar e evoluir constantemente.</p>
+  <div class="cards">
+    <div class="card"><h3>✏️ Missão Rápida</h3><p>Escreva um texto curto a partir de um tema surpresa.</p></div>
+    <div class="card"><h3>📖 Missão Narrativa</h3><p>Construa uma história completa em etapas.</p></div>
+    <div class="card"><h3>🎭 Missão Criativa</h3><p>Explore emoções, metáforas e estilos diferentes.</p></div>
+  </div>
+</section>
+
+<section id="premium" class="pricing">
+  <h2>Plano Premium</h2>
+  <p>Ideal para quem quer evoluir rápido na escrita</p>
+  <div class="price">R$ 10,00 / mês</div>
+  <ul style="list-style:none; padding:0; max-width:500px; margin:auto;">
+    <li>✔ Editor criativo completo</li>
+    <li>✔ Exemplos literários avançados</li>
+    <li>✔ Ferramentas de revisão e estilo</li>
+    <li>✔ Conteúdos para estudo e prática</li>
+    <li>✔ Ideal para estudantes e autores</li>
+  </ul>
+  <button>Assinar e Evoluir</button>
+</section>
+
+<section id="login">
+  <h2>Login / Cadastro</h2>
+  <div class="auth">
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Senha" />
+    <button>Entrar</button>
+    <p style="text-align:center; color:#888; margin-top:10px;">Ainda não tem conta? Cadastre-se gratuitamente.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Escreva+ • Literatura, criatividade e evolução contínua
+</footer>
+
+    <div class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️ Tema</div>
+
+  <div class="font-controls">
+    <button onclick="toggleFocus()">🎯</button>
+    <button onclick="toggleReading()">📖</button>
+    <button onclick="setFont('serif')">Aa</button>
+    <button onclick="setFont('sans')">A</button>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      document.body.classList.toggle('light');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    }
+
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+    }
+
+    function toggleReading() {
+      document.body.classList.toggle('reading-mode');
+    }
+
+    function setFont(type) {
+      document.body.classList.remove('serif', 'sans');
+      document.body.classList.add(type);
+      localStorage.setItem('font', type);
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.body.classList.remove('light', 'dark');
+      document.body.classList.add(savedTheme);
+    }
+
+    const savedFont = localStorage.getItem('font');
+    if (savedFont) {
+      document.body.classList.add(savedFont);
+    }
+  </script>
+</body>
+</html>
